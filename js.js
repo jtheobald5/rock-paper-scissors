@@ -1,37 +1,43 @@
-const rock = 1
-const paper = 2
-const scissors = 3
 let cpuChoice = getComputerChoice()
 let playerInput = prompt("Rock, Paper, or Scissors?")
-let playerChoice = playerInput.toLowerCase()
+let playerValue = convertInput(playerInput)
 const tie = "It was a tie!"
 const win = "You have won!"
 const lose = "You have lost!"
 
 function getComputerChoice() {
-    let num = (Math.floor(Math.random() * 3))
-    let cpu
-    if (num == 0) {
-        cpu = rock
-    } else if (num == 1) {
-        cpu = paper
-    } else {
-        cpu = scissors
-    }
-    return cpu
+    return (Math.floor(Math.random() * 3)+1) 
 }
-console.log(getComputerChoice())
-console.log(playerChoice)
+
+/* test values */
+console.log(cpuChoice + " cpu")
+console.log(playerValue + " player")
+
+
+/* Converts player input into value */
+function convertInput(string) {
+    let newString = string.toLowerCase()
+    let value
+    if (newString == "rock") {
+        value = 1;
+    } else if (newString == "paper") {
+        value = 2;
+    } else if (newString == "scissors") {
+        value = 3;
+    } else {
+        alert("Invalid entry")
+    }
+    return value;
+}
 
 /* 1 = rock */
 /* 2 = paper */
 /* 3 = scissors */
-function gameOne(playerChoice, cpuChoice) {
+function gameOne(player, cpu) {
     let decision
-    if (playerChoice == cpuChoice) {
+    if (player == cpu) {
         decision = tie;
-    } else if 
-        ((playerChoice === 1 && cpuChoice === 2) || (playerChoice === 2 && cpuChoice === 3) || (playerChoice === 3 && cpuChoice === 1)) {
+    } else if ((player == 1 && cpu == 2) || (player == 2 && cpu == 3) || (player == 3 && cpu== 1)) {
         decision = lose;
     } else {
         decision = win;
@@ -39,4 +45,4 @@ function gameOne(playerChoice, cpuChoice) {
     return decision;
 }
 
-console.log(gameOne(playerChoice, cpuChoice))
+console.log(gameOne(playerValue, cpuChoice))
