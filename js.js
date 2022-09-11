@@ -84,6 +84,7 @@ function game(times) {
     return `You just played ${times} games of Rock-Paper-Scissors. Hopefully you won the majority!`;
     /* Add in a counter that counts how many games you won and decides if you won the majority */
     /* Add in prompt to change the amount of games played */
+    /* add in way to change prompt every round */
 } 
 
 console.log(game(5))
