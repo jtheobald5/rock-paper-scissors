@@ -104,11 +104,11 @@ function winner(player, cpu) {
     player = playerInput;
     console.log('cpu chose ' + cpu);
     if (cpu == playerInput) {
-        return 'tie';
+        return 'Tie you have, great minds think alike and you both chose ' + player;
     } else if ((cpu == 'Rock' && player == 'Scissors') || (cpu == 'Paper' && player == 'Rock') || (cpu == 'Scissors' && player == 'Paper')) {
-        return 'lose';
+        return 'You lost this round! You chose ' + player + ' and the cpu chose ' + cpu + '. You need to get your act together';
     } else {
-        return 'win';
+        return 'You won! You chose ' + player + ' and the cpu chose ' + cpu;
     }
 }
 
