@@ -88,14 +88,14 @@ function getComputerChoice() {
 let playerInput;
 
 const buttons = document.querySelectorAll('button');
+let output = document.getElementById('output');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         // console.log(button.id);
         playerInput = button.id;
         console.log('p chose: ' + playerInput);
-        console.log(winner());
-        
+        output.textContent = winner();
     })
 })
 
