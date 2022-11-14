@@ -29,14 +29,14 @@ buttons.forEach((button) => {
         playerInput = button.id;
         // console.log('p chose: ' + playerInput);
         output.textContent = winner();
-        cpuCounter.textContent = scoreCpu;
-        playerCounter.textContent = scorePlayer;
+        cpuCounter.textContent = 'Cpu: ' + scoreCpu;
+        playerCounter.textContent = 'Player: ' + scorePlayer;
         gameCounter.textContent = 'Game ' + game;
         if (scoreCpu == 5) {
-            alert('How could you lose??? I had so much faith in you.  :(');
+            alert('How could you lose??? I had so much faith in you.  :(\r\rFINAL SCORE\rYour score: ' + scorePlayer + '\rCpu score: ' + scoreCpu + '\rGames played: ' + game);
             location.reload();
         } else if (scorePlayer == 5) {
-            alert('Congratulations!!! You have proven to be smarter then a computer!');
+            alert('Congratulations!!! You have proven to be smarter then a computer!\r \rFINAL SCORE\rYour score: ' + scorePlayer + '\rCpu score: ' + scoreCpu + '\rGames played: ' + game);
             location.reload();
         }
     })
